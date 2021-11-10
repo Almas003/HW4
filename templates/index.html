@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Check Coin</title>
+	<style>
+		p {
+			color: white;
+			margin: 7px;
+			padding-top: 5px;
+		}
+	</style>
+</head>
+<body style="background-color: #002B36;">
+	<form method="get" style="margin: 20px 0px 20px 40px;">
+		<input type="text" placeholder="{{ input_text }}" name="coin" style="height: 25px;">
+		<button type="submit" style="height: 30px;">Check</button>
+	</form>
+	{% for paragraph in paragraphs %}
+		<div style="background-color: black; margin: 20px 40px 20px 40px;">
+			<p>{{ paragraph.id }}</p>
+			<p>{{ paragraph.title }}</p>
+			<p>{{ paragraph.source }}</p>
+			<p>{{ paragraph.published_time }}</p>
+			<p>{{ paragraph.cryptocurrency }}</p>
+			<a href="{{ paragraph.url }}" style="color: blueviolet; margin-left: 5px;">{{ paragraph.url }}</a>
+		</div>
+	{% endfor %}
+</body>
+</html>
